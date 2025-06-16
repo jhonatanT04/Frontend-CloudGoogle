@@ -1,0 +1,81 @@
+/* Estilo general */
+:host {
+    display: block;
+    max-width: 500px;
+    margin: 40px auto;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    padding: 32px 24px;
+}
+
+/* Títulos */
+h2 {
+    color: #2d3a4b;
+    margin-bottom: 18px;
+    font-size: 1.4rem;
+}
+
+/* Inputs y botón */
+input[type="text"],
+input[type="file"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9fafb;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 24px;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+/* Lista de posts */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #f3f4f6;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    padding: 14px 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+li strong {
+    color: #1e293b;
+    font-size: 1.05rem;
+}
+
+li img {
+    display: block;
+    margin-top: 8px;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    max-width: 100%;
+    height: auto;
+}
