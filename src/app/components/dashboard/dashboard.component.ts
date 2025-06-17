@@ -51,7 +51,9 @@ export class DashboardComponent {
   servidorConsulta(){
     this.postService.getMsjServe().subscribe(
       a => {
+        
         this.msjServe = a.mensaje
+        console.log(this.msjServe)
       }
     )
   }
