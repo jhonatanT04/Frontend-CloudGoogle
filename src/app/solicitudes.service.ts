@@ -6,25 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SolicitudesService {
-
-  private apiUrl = 'http://34.111.171.73/api/posts';
+  private apiUrl = 'http://34.111.171.73:3000/posts';
 
   constructor(private http: HttpClient) { }
-
 
   getPosts(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-
-  addPost(contenedor: string, imagen: File): Observable<any> {
-    const formData = new FormData();
-    formData.append('contenedor', contenedor);
-    formData.append('imagen', imagen);
-
-    return this.http.post<any>(this.apiUrl, formData);
+  addPost(titulo: string, descripcion: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl, { titulo, descripcion });
   }
+
   getMsjServe(): Observable<any> {
-    return this.http.get('http://34.111.171.73/api/saludo');
+    return this.http.get('http://34.111.171.73:3000/');
   }
 }

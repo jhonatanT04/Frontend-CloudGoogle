@@ -14,9 +14,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class DashboardComponent {
   posts: any[] = [];
-  text: string = '';
-  selectedFile: File | null = null;
+  titulo: string = '';
+  descripcion: string = '';
   msjServe = '';
+
   constructor(private postService: SolicitudesService) {}
 
   ngOnInit() {
@@ -25,36 +26,31 @@ export class DashboardComponent {
 
   cargarPosts() {
     this.postService.getPosts().subscribe(data => {
-      
       this.posts = data;
     });
-    this.servidorConsulta()
-  }
-
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
+    this.servidorConsulta();
   }
 
   subirPost() {
-    if (!this.text || !this.selectedFile) {
-      alert('Debes ingresar texto y seleccionar una imagen.');
+    if (!this.titulo || !this.descripcion) {
+      alert('Debes ingresar un título y una descripción.');
       return;
     }
 
-    this.postService.addPost(this.text, this.selectedFile).subscribe(response => {
+    this.postService.addPost(this.titulo, this.descripcion).subscribe(response => {
       console.log('Post creado:', response);
-      this.text = '';
-      this.selectedFile = null;
+      this.titulo = '';
+      this.descripcion = '';
       this.cargarPosts();
     });
   }
-  servidorConsulta(){
+
+  servidorConsulta() {
     this.postService.getMsjServe().subscribe(
       a => {
-        
-        this.msjServe = a.mensaje
-        console.log(this.msjServe)
+        this.msjServe = a.mensaje;
+        console.log(this.msjServe);
       }
-    )
+    );
   }
 }

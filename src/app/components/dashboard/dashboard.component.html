@@ -1,16 +1,16 @@
 <h2>Subir nuevo post</h2>
-<input type="text" [(ngModel)]="text" placeholder="Contenido">
-<input type="file" (change)="onFileSelected($event)">
+<input type="text" [(ngModel)]="titulo" placeholder="Título">
+<br>
+<textarea [(ngModel)]="descripcion" placeholder="Descripción"></textarea>
+<br>
 <button (click)="subirPost()">Subir</button>
 
 <hr>
-<!-- <p>{{ msjServe }}</p> -->
+
 <h2>Posts</h2>
 <ul>
   <li *ngFor="let post of posts">
-    <strong>{{ post.contenido }}</strong><br>  
-    <img [src]="post.url" width="150" *ngIf="post.url">
+    <strong>{{ post.titulo }}</strong><br>  
+    <span>{{ post.descripcion }}</span>
   </li>
 </ul>
-
-
