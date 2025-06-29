@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SolicitudesService {
-  private apiUrl = 'http://34.111.171.73:3000/posts';
+  private apiUrl = 'http://192.168.18.172:3000/posts';
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,6 @@ export class SolicitudesService {
   }
 
   getMsjServe(): Observable<any> {
-    return this.http.get('http://34.111.171.73:3000/');
+    return this.http.get('http://192.168.18.172:3000/');
   }
 }
